@@ -9,6 +9,7 @@ vector_cantidad_artefactos <- c(27,19,13,24,5,60,9,81,12,10)
 sum(vector_cantidad_artefactos)
 #3
 vector_profundidad_hallazgos <- c(2,4,8,10,3,7)
+m <- which.max(vector_profundidad_hallazgos)
 vector_profundidad_hallazgos[m]
 #4
 vector_materiales_encontrados<- c("elemento1","elemento2","elemento3","elemento4","elemento5") 
