@@ -11,8 +11,8 @@ sum(vector_cantidad_artefactos)
 vector_profundidad_hallazgos <- c(2,4,8,10,3,7)
 vector_profundidad_hallazgos[m]
 #4
-vector_materiales_encontrados<- c(1,2,3,4,5) 
-sum(vector_materiales_encontrados)
+vector_materiales_encontrados<- c("elemento1","elemento2","elemento3","elemento4","elemento5") 
+length(vector_materiales_encontrados)
 #5
 vector_años_excavaciones <- c(1,2,2,3,4)
 length(vector_años_excavaciones)
@@ -45,9 +45,10 @@ matriz5 <- matrix(c(1,4,5,2,3,1),
                   nrow = 2 , ncol= 3 ,
                   byrow = T)
 mode <- function(matriz5) {
-  return(as.numeric(names(which.max(table(matriz5)
+  return(as.numeric(names(which.max(table(matriz5)))))
 }
-mode(matriz5)
+mode(col(matriz5))
+View(matriz5)
 #11
 set.seed(67)
 n_registros=10
@@ -64,3 +65,44 @@ tipo_artefactos <- sample(c("collar de cuentas","hachas","puntas de lanza"), n_r
 fecha_artefactos <- sample(1:150, n_registros, replace = TRUE)
 descripción <- sample(c("Bien", "Mal"), n_registros, replace= TRUE)
 #12
+n_registros=5 
+
+excavaciones_equipo <- data.frame(
+  equipo = equipo,
+  sitio_arqueologico = sitio_arqueologico,
+  fecha_inicio = fecha_inicio, 
+  fecha_finalizacion = fecha_finalizacion
+)
+
+sitio_arqueologico <- sample(c("yac1","yac2","yac3","yac4","yac5"), n_registros, replace= TRUE)
+equipo <- sample(c("equipo1","equipo2","equipo3"), n_registros, replace= TRUE)
+fecha_inicio <- sample(1957:1976, n_registros, replace = TRUE)
+fecha_finalizacion <- sample(1976:1981, n_registros, replace= TRUE)
+#13
+n_registros=10
+
+datos_esqueletos <- data.frame(
+  edad = edad,
+  sitio_arqueologico = sitio_arqueologico,
+  sexo = sexo, 
+  singularidad = singularidad
+)
+
+sitio_arqueologico <- sample(c("yac1","yac2","yac3","yac4","yac5"), n_registros, replace= TRUE)
+edad <- sample(200:470, n_registros, replace= TRUE)
+sexo <- sample(c("hombre","mujer"), n_registros, replace = TRUE)
+singularidad <- sample(c("desmembrado","vestido","expoliado"), n_registros, replace= TRUE)
+#14
+n_registros= 5
+
+ubicacion_geografica <- data.frame(
+  sitio_arqueologico = sitio_arqueologico,
+  latitud = latitud,
+  altitud = altitud, 
+  longitud = longitud
+)
+
+sitio_arqueologico <- sample(c("yac1","yac2","yac3","yac4","yac5"), n_registros, replace= TRUE)
+latitud <- sample(3:15, n_registros, replace= TRUE)
+altitud <- sample(1:10, n_registros, replace = TRUE)
+longitud <- sample(64.87829:89.76005, n_registros, replace= TRUE)
